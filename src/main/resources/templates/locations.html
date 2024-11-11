@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+      <ul th:each="location : ${locations}">
+          <li>
+
+              <a th:href="@{'/locations/events/{id}' (id=${location.getId()})}"
+                 th:text="${location.name} + ' Address: ' +
+                        ${location.address} + ' Capacity: ' +
+                        ${location.capacity} + ' Description: ' +
+                        ${location.description}">
+              </a>
+
+          </li>
+      </ul>
+    </div>
+</body>
+</html>
